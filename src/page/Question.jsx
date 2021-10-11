@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import Button  from './Button'
 import styled from 'styled-components'
 
@@ -12,18 +12,17 @@ export const QuestionTitle = styled.h1`
 export const CurrentQuestion = styled.p`
   position: absolute;
   font-size: 1.5rem;
-  top: 6rem;
+  top: 7rem;
   left: 3rem;
 `
 
 export default function Question({curQ, curPage, clickHandler}) {
 
-  const firstBtn = '20rem'
+  const firstBtn = '19rem'
   const secondBtn = '10rem'
   const current = curQ[curPage]
   const length = curQ.length
-  console.log(length)
-  console.log(curPage)
+
   const textContent = () => {
     return {__html: current.q}
   }
@@ -50,6 +49,7 @@ export default function Question({curQ, curPage, clickHandler}) {
         value={current.a[1].value}
         clickHandler={clickHandler}
         curPage={curPage}
+        length={length}
       >
       </Button>
     </>

@@ -5,7 +5,7 @@ import {lighten, darken} from 'polished'
 
 export const GlobalButton = styled.button`
   position: absolute;
-  width: ${(props) => props.position ? '29rem' :' 30rem'};
+  width: ${(props) => props.position ? '28rem' :' 30rem'};
   height: ${(props) => props.position ? '7rem' :' 5rem'};
   left: ${(props) => props.position ? '3rem' : '2.55rem'};
   bottom: ${(props) => props.position || '5rem'};
@@ -18,6 +18,10 @@ export const GlobalButton = styled.button`
   font-size: ${(props) => props.position === 'Intro' ? '20px' : '16px'};
   font-weight: 600;
   color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
 
   &:hover {
     cursor: pointer;
@@ -42,8 +46,6 @@ export default function Button({
   const textContent = () => {
     return {__html: text}
   }
-
-  console.log(curPage)
 
 
   return (
