@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from '../styles/Button'
-import Image from '../styles/Image'
 import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.div`
@@ -23,15 +22,12 @@ export const Description = styled.h3`
 
 export default function Intro() {
   return (
-    <>
-      <Wrapper>
-        <Title>해리포터 테스트</Title>
-        <Description>당신이 해리포터 속 인물이라면?</Description>
-        <Image />
-      </Wrapper>
-      <Link to='test'>
-        <Button text='테스트 시작!'></Button>
+    <Wrapper>
+      <Title> 잘못된 경로로 들어오셨어요 </Title>
+      <Description>다시 문제를 풀러 가볼까요?</Description>
+      <Link to='/'>
+        <Button text='문제 다시 풀러 가기'></Button>
       </Link>
-    </>
+    </Wrapper>
   )
 }

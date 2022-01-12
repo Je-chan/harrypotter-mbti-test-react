@@ -1,7 +1,6 @@
-import React,{useEffect} from 'react'
+import React, { useEffect } from 'react'
 
-export default function Loading({setLoading}) {
-  
+export default function Loading({ setLoading }) {
   useEffect(() => {
     const loadingHandler = setTimeout(() => {
       setLoading()
@@ -12,9 +11,5 @@ export default function Loading({setLoading}) {
     }
   }, [])
 
-  return (
-    <div>
-      Loading 중입니다. 잠시만 기다려주세요.
-    </div>
-  )
+  return <div>Loading 중입니다. 잠시만 기다려주세요.</div>
 }

@@ -16,6 +16,7 @@ export const CurrentQuestion = styled.p`
 `
 
 export default function Question({ curQ, curPage, clickHandler }) {
+  console.log('curPage', curPage)
   const firstBtn = '19rem'
   const secondBtn = '10rem'
   const current = curQ[curPage]
