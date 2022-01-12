@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from './Button'
-import Image from './Image'
+import Button from '../styles/Button'
+import Image from '../styles/Image'
 import { Link } from 'react-router-dom'
-
 
 export const Wrapper = styled.div`
   position: relative;
@@ -22,9 +21,7 @@ export const Description = styled.h3`
   color: #7d7d7d;
 `
 
-
-
-export default function Intro({curQ}) {
+export default function Intro({ curQ }) {
   return (
     <>
       <Wrapper>
@@ -32,7 +29,9 @@ export default function Intro({curQ}) {
         <Description>당신이 해리포터 속 인물이라면?</Description>
         <Image />
       </Wrapper>
-      <Link to = 'test'><Button text='테스트 시작!'></Button></Link>
+      <Link to='test'>
+        <Button text='테스트 시작!'></Button>
+      </Link>
     </>
   )
 }
