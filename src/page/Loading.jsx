@@ -9,7 +9,7 @@ export default function Loading({ setLoading }) {
     return () => {
       clearTimeout(loadingHandler)
     }
-  }, [])
+  }, [setLoading])
 
   return <div>Loading 중입니다. 잠시만 기다려주세요.</div>
 }

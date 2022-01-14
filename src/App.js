@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { questions as curQ, result, page } from './data/question'
 import styled from 'styled-components'
@@ -29,8 +29,6 @@ function App() {
   const [curScore, setCurScore] = useState(result)
   const [curPage, setCurPage] = useState(page)
   const [isLoading, setIsLoading] = useState(true)
-
-  const pageRef = useRef(curPage)
 
   const clickHandler = (e) => {
     const type = e.target.value

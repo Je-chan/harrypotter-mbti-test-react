@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { result } from '../data/result'
 import { Wrapper } from './Intro'
