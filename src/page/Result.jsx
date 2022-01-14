@@ -13,7 +13,9 @@ export const Description = styled.div`
 `
 
 export default function Result({ curScore }) {
-  const mbti = `${curScore.e > 1 ? 'e' : 'i'}${curScore.n > 1 ? 'n' : 's'}${curScore.f > 1 ? 'f' : 't'}${curScore.j > 1 ? 'j' : 'p'}`
+  const mbti = `${curScore.e > 1 ? 'e' : 'i'}${curScore.n > 1 ? 'n' : 's'}${
+    curScore.f > 1 ? 'f' : 't'
+  }${curScore.j > 1 ? 'j' : 'p'}`
   const final = result[mbti]
 
   const textContent = () => {

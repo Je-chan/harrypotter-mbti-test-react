@@ -8,17 +8,24 @@ export const Frame = styled.div`
   height: 16rem;
   display: flex;
   justify-content: center;
-  -webkit-box-reflect: ${(props)=> props.source 
-  ? 'none'
-  : 'below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent) , to(rgba(250, 250, 250, 0.4)))'
-  }; 
+  -webkit-box-reflect: ${(props) =>
+    props.source
+      ? 'none'
+      : 'below 5px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent) , to(rgba(250, 250, 250, 0.4)))'};
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+
+  > img {
+    width: 100%;
+  }
 `
 
-export default function Image({source}) {
+export default function Image({ source }) {
   return (
-
     <Frame source={source}>
-      <img src={source || 'img/poster.jpeg'} alt={source ? source.title : 'poster'}/>
+      <img src={source || 'img/poster.jpeg'} alt={source ? source.title : 'poster'} />
     </Frame>
   )
 }
