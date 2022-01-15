@@ -71,6 +71,7 @@ function App() {
               ) : nowScore === 12 ? (
                 <Result curScore={curScore} resetCurScore={resetCurScore} />
               ) : (
+                // 수정 필요
                 <Error />
               )}
             </Route>
