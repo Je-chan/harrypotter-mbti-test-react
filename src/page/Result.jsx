@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { result } from '../data/result'
 import { Wrapper } from './Intro'
@@ -12,15 +13,26 @@ export const Description = styled.div`
   line-height: 1.3;
 `
 
-export default function Result({ curScore }) {
+export default function Result({ curScore, resetCurScore }) {
+  let history = useHistory()
+
   const mbti = `${curScore.e > 1 ? 'e' : 'i'}${curScore.n > 1 ? 'n' : 's'}${
     curScore.f > 1 ? 'f' : 't'
   }${curScore.j > 1 ? 'j' : 'p'}`
+
   const final = result[mbti]
 
   const textContent = () => {
     return { __html: final.description }
   }
+
+  useEffect(() => {
+    console.log(Object.values(curScore).reduce((acc, cur) => acc + cur))
+    if (Object.values(curScore).reduce((acc, cur) => acc + cur) === 0) {
+      return history('/')
+    }
+    resetCurScore()
+  }, [curScore, history, resetCurScore])
 
   return (
     <>

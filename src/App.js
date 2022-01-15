@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { questions as curQ, result, page } from './data/question'
 import styled from 'styled-components'
@@ -44,6 +44,14 @@ function App() {
     return setIsLoading(false)
   }
 
+  const resetCurScore = () => {
+    setCurScore(result)
+  }
+
+  const resetCurPage = () => {
+    setCurPage(page)
+  }
+
   const nowScore = Object.values(curScore).reduce((acc, cur) => acc + cur)
 
   return (
@@ -52,12 +60,20 @@ function App() {
         <Main heightLong={isLoading}>
           <Switch>
             <Route exact path='/'>
-              <Intro />
+              <Intro resetCurScore={resetCurScore} resetCurPage={resetCurPage} />
             </Route>
             <Route path='/test'>
               <Question curQ={curQ} curPage={curPage} clickHandler={clickHandler} />
             </Route>
-            <Route path='/result'>{isLoading ? <Loading setLoading={setLoading} /> : nowScore === 12 ? <Result curScore={curScore} /> : <Error />}</Route>
+            <Route path='/result'>
+              {isLoading ? (
+                <Loading setLoading={setLoading} />
+              ) : nowScore === 12 ? (
+                <Result curScore={curScore} resetCurScore={resetCurScore} />
+              ) : (
+                <Error />
+              )}
+            </Route>
           </Switch>
         </Main>
       </Background>

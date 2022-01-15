@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { GlobalButton } from '../styles/Button'
 import Image from '../styles/Image'
@@ -39,7 +39,12 @@ const IntroButton = styled(GlobalButton)`
   bottom: 0;
 `
 
-export default function Intro() {
+export default function Intro({ resetCurScore, resetCurPage }) {
+  useEffect(() => {
+    resetCurScore()
+    resetCurPage()
+  }, [resetCurScore, resetCurPage])
+
   return (
     <>
       <Wrapper>

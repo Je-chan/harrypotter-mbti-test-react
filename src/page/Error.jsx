@@ -20,7 +20,7 @@ export const Description = styled.h3`
   color: #7d7d7d;
 `
 
-export default function Intro() {
+export default function Error() {
   return (
     <Wrapper>
       <Title> 잘못된 경로로 들어오셨어요 </Title>
