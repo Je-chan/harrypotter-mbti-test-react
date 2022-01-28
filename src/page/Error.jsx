@@ -34,13 +34,13 @@ const ErrorBtn = styled(GlobalButton)`
   padding: 0;
 `
 
-export default function Error() {
+export default function Error({ resetCurScore }) {
   return (
     <Wrapper>
       <Title> 잘못된 경로로 들어오셨어요 </Title>
       <Description>다시 문제를 풀러 가볼까요?</Description>
       <Link to='/'>
-        <ErrorBtn>문제 풀러 가기</ErrorBtn>
+        <ErrorBtn onClick={resetCurScore}>문제 풀러 가기</ErrorBtn>
       </Link>
     </Wrapper>
   )

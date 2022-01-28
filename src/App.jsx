@@ -52,8 +52,6 @@ function App() {
     setCurPage(page)
   }
 
-  const nowScore = Object.values(curScore).reduce((acc, cur) => acc + cur)
-
   return (
     <Router>
       <Background>
@@ -68,11 +66,10 @@ function App() {
             <Route path='/result'>
               {isLoading ? (
                 <Loading setLoading={setLoading} />
-              ) : nowScore === 12 ? (
+              ) : curPage === 12 ? (
                 <Result curScore={curScore} resetCurScore={resetCurScore} />
               ) : (
-                // 수정 필요g
-                <Error />
+                <Error resetCurScore={resetCurScore} />
               )}
             </Route>
           </Switch>

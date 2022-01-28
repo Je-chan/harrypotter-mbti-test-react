@@ -29,10 +29,11 @@ export default function Result({ curScore, resetCurScore }) {
   useEffect(() => {
     console.log(Object.values(curScore).reduce((acc, cur) => acc + cur))
     if (Object.values(curScore).reduce((acc, cur) => acc + cur) === 0) {
-      return history('/')
+      return history.push('/')
     }
     resetCurScore()
-  }, [curScore, history, resetCurScore])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <>
