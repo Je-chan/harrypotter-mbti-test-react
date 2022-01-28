@@ -27,8 +27,11 @@ const Description = styled.h3`
 `
 
 const ErrorBtn = styled(GlobalButton)`
+  width: 20rem;
   position: relative;
-  margin: 10rem 0;
+  left: 0;
+  margin: 8rem 0;
+  padding: 0;
 `
 
 export default function Error() {
