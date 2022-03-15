@@ -33,6 +33,9 @@ export default function Result({ curScore, resetCurScore }) {
     }
     resetCurScore()
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {
+      resetCurScore()
+    }
   }, [])
 
   return (

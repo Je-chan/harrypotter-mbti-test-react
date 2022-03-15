@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from '../styles/Button'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
+
 
 export const QuestionTitle = styled.h1`
   position: absolute;
@@ -17,6 +19,8 @@ export const CurrentQuestion = styled.p`
 
 export default function Question({ curQ, curPage, clickHandler }) {
   console.log('curPage', curPage)
+  let history = useHistory()
+  if(!curPage) return history.push('/')
   const firstBtn = '19rem'
   const secondBtn = '10rem'
   const current = curQ[curPage]
